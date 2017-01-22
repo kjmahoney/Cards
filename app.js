@@ -1,5 +1,4 @@
 //sub out J,Q,K,A
-//cascade css
 //fix flip
 
 
@@ -18,13 +17,13 @@ for (i=2;i<15; i++){
 
     //Add sub-divs to the four cards that were made
     var cardSegmentTop = document.createElement('div');
-    cardSegmentTop.className = "card-segment-top"
+    cardSegmentTop.className = "card-segment top"
 
     var cardSegmentMiddle = document.createElement('div');
-    cardSegmentMiddle.className = "card-segment-middle"
+    cardSegmentMiddle.className = "card-segment middle"
 
     var cardSegmentBottom = document.createElement('div');
-    cardSegmentBottom.className = "card-segment-bottom"
+    cardSegmentBottom.className = "card-segment bottom"
 
     var suitDisplay = document.createElement('p');
     suitDisplay.className = "suit-display"
@@ -50,22 +49,21 @@ for (i=2;i<15; i++){
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentMiddle)
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
 
-    document.getElementsByClassName("card-segment-top")[n + s].innerHTML = number + suit[s]
-    // document.getElementsByClassName("card-segment-middle")[n + s].innerHTML = suit[s].repeat(i)
+    document.getElementsByClassName("top")[n + s].innerHTML = number + suit[s]
 
     if (i >= 11){
       var suitDisplay = document.createElement('p');
-      suitDisplay.className = "suit-display-big"
-      document.getElementsByClassName("card-segment-middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
+      suitDisplay.className = "suit-display big"
+      document.getElementsByClassName("middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
     }else{
     for (l = 0; l< i; l ++){
       var suitDisplay = document.createElement('p');
       suitDisplay.className = "suit-display"
-      document.getElementsByClassName("card-segment-middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
+      document.getElementsByClassName("middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
     }
   }
 
-    document.getElementsByClassName("card-segment-bottom")[n + s].innerHTML = number + suit[s]
+    document.getElementsByClassName("bottom")[n + s].innerHTML = number + suit[s]
   }
 
 }
