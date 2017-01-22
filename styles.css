@@ -17,23 +17,37 @@
 }
 
 .card-segment-top{
-  background-color: red;
   width: 100%;
   height: 90px;
   text-align: left;
+  font-size: 20px;
 }
 
 .card-segment-middle{
-  background-color: blue;
   width: 100%;
   height: 180px;
-  text-align: center;
-
+  display: flex;
+  flex-direction: row;
+  font-size: 48px;
 }
 
+
 .card-segment-bottom{
-  background-color: green;
   width: 100%;
   height: 90px;
   text-align: right;
+  font-size: 20px;
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);*/
+  transform:rotateY(180deg);
+  transform:rotateX(180deg);
+}
+
+.suit-display{
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
 }

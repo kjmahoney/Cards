@@ -1,3 +1,20 @@
+class Card {
+  constructor(value, suit) {
+    this.value = value;
+    this.suit = suit;
+  }
+}
+
+//
+
+
+
+//sub out J,Q,K,A
+//cascade css
+//make number of symbols spill in center div
+//Aces are giant
+//fix flip
+
 
 //declare an array with suits
 var suit = [`♠`, '♥', '♦', '♣']
@@ -22,34 +39,44 @@ for (i=2;i<15; i++){
     var cardSegmentBottom = document.createElement('div');
     cardSegmentBottom.className = "card-segment-bottom"
 
-    console.log(n + s)
+    var suitDisplay = document.createElement('p');
+    suitDisplay.className = "suit-display"
+
+    //substitute symbols for face cards
+    if (i === 11){
+      var number = "J"
+    }
+    else if(i===12){
+      var number = "Q"
+    }
+    else if(i===13){
+      var number = "K"
+    }
+    else if(i===14){
+      var number = "A"
+    }
+    else{
+      var number = i
+    }
+
+    var kevin = suit[s]
+
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentTop)
     document.getElementsByClassName("card")[n+ s].appendChild(cardSegmentMiddle)
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
 
-    document.getElementsByClassName("card-segment-top")[n + s].innerHTML = i + suit[s]
-    document.getElementsByClassName("card-segment-middle")[n + s].innerHTML = suit[s]
-    document.getElementsByClassName("card-segment-bottom")[n + s].innerHTML = i + suit[s]
+    document.getElementsByClassName("card-segment-top")[n + s].innerHTML = number + suit[s]
+    // document.getElementsByClassName("card-segment-middle")[n + s].innerHTML = suit[s].repeat(i)
+
+    for (l = 0; l< i; l ++){
+      var suitDisplay = document.createElement('p');
+      suitDisplay.className = "suit-display"
+      document.getElementsByClassName("card-segment-middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
+    }
+
+
+
+    document.getElementsByClassName("card-segment-bottom")[n + s].innerHTML = number + suit[s]
   }
 
-
-  // if (i === 11){
-  //   console.log("J")
-  // }
-  // else if(i===12){
-  //   console.log("Q")
-  // }
-  // else if(i===13){
-  //   console.log("K")
-  // }
-  // else if(i===14){
-  //   console.log("A")
-  // }
-  // else{
-  //   console.log(i)
-  // }
-
 }
-
-var apple = document.getElementsByClassName("card")
-console.log(apple.length)
