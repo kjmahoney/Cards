@@ -1,18 +1,5 @@
-class Card {
-  constructor(value, suit) {
-    this.value = value;
-    this.suit = suit;
-  }
-}
-
-//
-
-
-
 //sub out J,Q,K,A
 //cascade css
-//make number of symbols spill in center div
-//Aces are giant
 //fix flip
 
 
@@ -59,22 +46,24 @@ for (i=2;i<15; i++){
       var number = i
     }
 
-    var kevin = suit[s]
-
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentTop)
-    document.getElementsByClassName("card")[n+ s].appendChild(cardSegmentMiddle)
+    document.getElementsByClassName("card")[n + s].appendChild(cardSegmentMiddle)
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
 
     document.getElementsByClassName("card-segment-top")[n + s].innerHTML = number + suit[s]
     // document.getElementsByClassName("card-segment-middle")[n + s].innerHTML = suit[s].repeat(i)
 
+    if (i >= 11){
+      var suitDisplay = document.createElement('p');
+      suitDisplay.className = "suit-display-big"
+      document.getElementsByClassName("card-segment-middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
+    }else{
     for (l = 0; l< i; l ++){
       var suitDisplay = document.createElement('p');
       suitDisplay.className = "suit-display"
       document.getElementsByClassName("card-segment-middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
     }
-
-
+  }
 
     document.getElementsByClassName("card-segment-bottom")[n + s].innerHTML = number + suit[s]
   }

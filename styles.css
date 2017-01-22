@@ -12,29 +12,32 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  /*align-items: flex-start;
-  justify-content: flex-start;*/
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .card-segment-top{
   width: 100%;
-  height: 90px;
+  height: 60px;
   text-align: left;
   font-size: 20px;
 }
 
 .card-segment-middle{
   width: 100%;
-  height: 180px;
+  height: 240px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
   font-size: 48px;
 }
 
-
 .card-segment-bottom{
   width: 100%;
-  height: 90px;
+  height: 60px;
   text-align: right;
   font-size: 20px;
   -webkit-transform:rotateY(180deg);
@@ -46,8 +49,20 @@
 }
 
 .suit-display{
-  background-color: red;
-  width: 25px;
-  height: 25px;
-  font-size: 20px;
+  display: block;
+  width: 50px;
+  height: 20px;
+  font-size: 28px;
+}
+
+.suit-display-big{
+  display: block;
+  width: 100px;
+  height:100px;
+  font-size: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
 }
