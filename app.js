@@ -15,9 +15,9 @@ for (i=2;i<15; i++){
 
 
   card.className = "card"
-  cardSegmentTop.id = "card-segment-top"
-  cardSegmentMiddle.id = "card-segment-middle"
-  cardSegmentBottom.id = "card-segment-bottom"
+  cardSegmentTop.className = "card-segment-top"
+  cardSegmentMiddle.className = "card-segment-middle"
+  cardSegmentBottom.className = "card-segment-bottom"
 
 
   document.getElementById("table").appendChild(card)
@@ -26,9 +26,9 @@ for (i=2;i<15; i++){
   burger[i-2].appendChild(cardSegmentMiddle)
   burger[i-2].appendChild(cardSegmentBottom)
 
-  document.getElementById("card-segment-top").innerHTML = `♠`;
-  document.getElementById("card-segment-middle").innerHTML = `♠`;
-  document.getElementById("card-segment-bottom").innerHTML = `♠`;
+  document.getElementsByClassName("card-segment-top")[i-2].innerHTML = `♠`;
+  document.getElementsByClassName("card-segment-middle")[i-2].innerHTML = `♠`;
+  document.getElementsByClassName("card-segment-bottom")[i-2].innerHTML = `♠`;
 
 //use switch case when  time to refactor
 //Print the card number, for cards 11-14, print J,Q,K,A
