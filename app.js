@@ -1,7 +1,10 @@
+function deal(){
+
 //declare an array with suits
 var suit = [`♠`, '♥', '♦', '♣']
 //create card and innerHYML for each suit
 var n = -4
+
 for (i=2;i<15; i++){
   n = n + 4
   //while i is 2, make four cards, each with a different suit
@@ -70,4 +73,10 @@ for (i=2;i<15; i++){
 
   }
 
+}
+
+}
+
+function clearCards(){
+  document.body.innerHTML = '';
 }

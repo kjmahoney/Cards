@@ -1,8 +1,22 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#deal-button{
+  background-color: red;
+  height: 50px;
+  width: 20%;
+}
+
 #table{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .card{
