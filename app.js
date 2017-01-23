@@ -1,7 +1,3 @@
-//sub out J,Q,K,A
-//fix flip
-
-
 //declare an array with suits
 var suit = [`♠`, '♥', '♦', '♣']
 //create card and innerHYML for each suit
@@ -50,6 +46,9 @@ for (i=2;i<15; i++){
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
 
     document.getElementsByClassName("top")[n + s].innerHTML = number + suit[s]
+    document.getElementsByClassName("bottom")[n + s].appendChild(suitDisplay).innerHTML = number + suit[s]
+    // document.getElementsByClassName("bottom")[n + s].innerHTML = number + suit[s]
+
 
     if (i >= 11){
       var suitDisplay = document.createElement('p');
@@ -63,7 +62,6 @@ for (i=2;i<15; i++){
     }
   }
 
-    document.getElementsByClassName("bottom")[n + s].innerHTML = number + suit[s]
   }
 
 }
