@@ -45,9 +45,15 @@ for (i=2;i<15; i++){
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentMiddle)
     document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
 
-    document.getElementsByClassName("top")[n + s].innerHTML = number + suit[s]
+
+    document.getElementsByClassName("top")[n + s].appendChild(suitDisplay).innerHTML = number + suit[s]
+
+    var suitDisplay = document.createElement('p');
+    suitDisplay.className = "suit-display"
+
+    // document.getElementsByClassName("top")[n + s].innerHTML = number + suit[s]
     document.getElementsByClassName("bottom")[n + s].appendChild(suitDisplay).innerHTML = number + suit[s]
-    // document.getElementsByClassName("bottom")[n + s].innerHTML = number + suit[s]
+
 
 
     if (i >= 11){
