@@ -7,10 +7,13 @@
   </head>
   <body>
 
-    <button id="deal-button" onclick="deal()">Deal Cards</button>
+    <!-- buttons to deal and delete cards -->
+    <div class = "row">
+      <button class="deal-button" onclick="deal()">Deal Cards</button>
+      <button class="deal-button clear" onclick="clearCards()">Clear Cards</button>
+    </div>
 
     <!-- div to display the cards -->
-
     <div id ="table"></div>
     <script src ="app.js"></script>
   </body>

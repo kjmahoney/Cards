@@ -1,82 +1,83 @@
 function deal(){
 
-//declare an array with suits
-var suit = [`♠`, '♥', '♦', '♣']
-//create card and innerHYML for each suit
-var n = -4
+  //clear cards in case table is already populated
+  document.getElementById("table").innerHTML = '';
 
-for (i=2;i<15; i++){
-  n = n + 4
-  //while i is 2, make four cards, each with a different suit
-  for (s=0;s<suit.length;s++){
-    //Create a card
-    var card = document.createElement('div');
-    card.className = "card"
-    document.getElementById("table").appendChild(card)
+  //suitArrays to be displayed on table
+  var suitArray = [`♠`, '♥', '♦', '♣']
+  //variable n simplifies iteration through suitArray
+  var n = -4
 
-    //Add sub-divs to the four cards that were made
-    var cardSegmentTop = document.createElement('div');
-    cardSegmentTop.className = "card-segment top"
+  //iterate through cards 2 to A
+  for (i=2; i<15; i++){
+    n = n + 4
+    //For each number 2-A, make four cards, each with a different suit
+    for (s=0;s<suitArray.length;s++){
 
-    var cardSegmentMiddle = document.createElement('div');
-    cardSegmentMiddle.className = "card-segment middle"
+      //Create card
+      var card = document.createElement('div');
+      card.className = "card"
+      document.getElementById("table").appendChild(card)
 
-    var cardSegmentBottom = document.createElement('div');
-    cardSegmentBottom.className = "card-segment bottom"
+      //Add top, middle, and bottom divs to each card for styling purposes
+      var cardSegmentTop = document.createElement('div');
+      cardSegmentTop.className = "card-segment top"
 
-    var suitDisplay = document.createElement('p');
-    suitDisplay.className = "suit-display"
+      var cardSegmentMiddle = document.createElement('div');
+      cardSegmentMiddle.className = "card-segment middle"
 
-    //substitute symbols for face cards
-    if (i === 11){
-      var number = "J"
-    }
-    else if(i===12){
-      var number = "Q"
-    }
-    else if(i===13){
-      var number = "K"
-    }
-    else if(i===14){
-      var number = "A"
-    }
-    else{
-      var number = i
-    }
+      var cardSegmentBottom = document.createElement('div');
+      cardSegmentBottom.className = "card-segment bottom"
 
-    document.getElementsByClassName("card")[n + s].appendChild(cardSegmentTop)
-    document.getElementsByClassName("card")[n + s].appendChild(cardSegmentMiddle)
-    document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
+      document.getElementsByClassName("card")[n + s].appendChild(cardSegmentTop)
+      document.getElementsByClassName("card")[n + s].appendChild(cardSegmentMiddle)
+      document.getElementsByClassName("card")[n + s].appendChild(cardSegmentBottom)
 
+      //give face cards a letter instead of number
+      if (i === 11){
+        var number = "J"
+      }
+      else if(i===12){
+        var number = "Q"
+      }
+      else if(i===13){
+        var number = "K"
+      }
+      else if(i===14){
+        var number = "A"
+      }
+      else{
+        var number = i
+      }
 
-    document.getElementsByClassName("top")[n + s].appendChild(suitDisplay).innerHTML = number + suit[s]
-
-    var suitDisplay = document.createElement('p');
-    suitDisplay.className = "suit-display"
-
-    // document.getElementsByClassName("top")[n + s].innerHTML = number + suit[s]
-    document.getElementsByClassName("bottom")[n + s].appendChild(suitDisplay).innerHTML = number + suit[s]
-
-
-
-    if (i >= 11){
-      var suitDisplay = document.createElement('p');
-      suitDisplay.className = "suit-display big"
-      document.getElementsByClassName("middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
-    }else{
-    for (l = 0; l< i; l ++){
+      //place symbol and number in top and bottom of card
       var suitDisplay = document.createElement('p');
       suitDisplay.className = "suit-display"
-      document.getElementsByClassName("middle")[n + s].appendChild(suitDisplay).innerHTML = suit[s]
+      document.getElementsByClassName("top")[n + s].appendChild(suitDisplay).innerHTML = number + suitArray[s]
+      var suitDisplay = document.createElement('p');
+      suitDisplay.className = "suit-display"
+      document.getElementsByClassName("bottom")[n + s].appendChild(suitDisplay).innerHTML = number + suitArray[s]
+
+      //unless a face card, middle of card displays a suit symbol based on number value
+      if (i >= 11){
+        var suitDisplay = document.createElement('p');
+        suitDisplay.className = "suit-display big"
+        document.getElementsByClassName("middle")[n + s].appendChild(suitDisplay).innerHTML = suitArray[s]
+      }else{
+        for (l = 0; l< i; l ++){
+          var suitDisplay = document.createElement('p');
+          suitDisplay.className = "suit-display"
+          document.getElementsByClassName("middle")[n + s].appendChild(suitDisplay).innerHTML = suitArray[s]
+        }
+      }
+
     }
-  }
 
   }
 
 }
 
-}
-
+//clear cards from table
 function clearCards(){
-  document.body.innerHTML = '';
+  document.getElementById("table").innerHTML = '';
 }
